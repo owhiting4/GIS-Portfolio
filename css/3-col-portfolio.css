@@ -4,9 +4,16 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-3-col-portfolio/blob/master/LICENSE)
  */
 
+ html, body {
+   height: 100%;
+ }
+
 body {
   padding-top: 54px;
   font-family: "Roboto Slab", serif;
+  display: flex;
+  flex-direction: column;
+
 }
 
 @media (min-width: 992px) {
@@ -21,4 +28,8 @@ body {
 
 .pagination {
   margin-bottom: 30px;
+}
+
+.container {
+  flex: 1;
 }
