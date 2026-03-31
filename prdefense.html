@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Viewshed and visibility analysis of El Morro fortifications">
+    <meta name="author" content="Olivia Whiting">
+
+    <title>El Morro Visibility Analysis</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="css/3-col-portfolio.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Roboto Slab', serif;
+      }
+
+      .hero-title {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .hero-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        color: #555;
+      }
+
+      .project-section {
+        margin-bottom: 50px;
+      }
+
+      .project-card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        height: 100%;
+      }
+
+      .map-image {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .map-description {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #333;
+      }
+
+      .button {
+        background-color: #4287f5;
+        border: none;
+        color: white;
+        padding: 12px 32px;
+        text-decoration: none;
+        border-radius: 8px;
+        display: inline-block;
+      }
+
+      .button:hover {
+        background-color: #2f6fd1;
+        color: white;
+        text-decoration: none;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+
+      .fact-list {
+        padding-left: 22px;
+        margin-bottom: 0;
+      }
+
+      .fact-list li {
+        margin-bottom: 12px;
+        line-height: 1.8;
+        color: #333;
+        font-size: 1.02rem;
+      }
+
+      .subheading {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-top: 18px;
+        margin-bottom: 8px;
+        color: #222;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Olivia Whiting's Map Gallery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="shortbio.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="files/oliviawResume.pdf">Resume</a></li>
+            <li class="nav-item"><a class="nav-link" href="mailto:olivia-whiting@uiowa.edu">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+
+      <h1 class="hero-title">El Morro Visibility Analysis</h1>
+      <p class="hero-subtitle">
+        Line-of-sight modeling of coastal defense from Castillo San Felipe del Morro, Puerto Rico
+      </p>
+
+      <!-- Historical Context -->
+      <div class="row project-section">
+        <div class="col-lg-12">
+          <div class="project-card">
+            <h2 class="section-title">Historical Context</h2>
+            <p class="map-description">
+              Old San Juan served as one of Spain’s most important defensive ports in the Caribbean. Castillo San Felipe del Morro, commonly known as El Morro, began construction in 1539 and was built to defend the entrance to San Juan Bay from naval attack. Its dramatic location on high coastal cliffs gave defenders a commanding view of both the Atlantic Ocean and the harbor entrance.
+            </p>
+            <p class="map-description">
+              The fort was part of a much larger defensive system that protected the city for centuries. El Morro endured attacks by the English in 1595 and 1598, the Dutch in 1625, and later bombardment during the Spanish-American War in 1898. Today, it is preserved as part of San Juan National Historic Site and the UNESCO-listed La Fortaleza and San Juan National Historic Site.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Viewshed -->
+      <div class="row project-section align-items-center">
+        <div class="col-lg-6">
+          <img src="images/pr/Viewshed2.png" class="map-image img-fluid" alt="Viewshed analysis of El Morro">
+        </div>
+        <div class="col-lg-6">
+          <div class="project-card">
+            <h2 class="section-title">Viewshed Analysis</h2>
+            <p class="map-description">
+              This map shows cumulative visibility from manually placed observer points representing cannon positions along the walls of El Morro. These points were digitized based on visible terrain depressions in the DEM and field observations made on site, where cannon locations could be directly compared to the surface pattern of the fort.
+            </p>
+            <p class="map-description">
+              The viewshed output represents the number of observer points that can see each location. Higher values indicate stronger overlap in visibility, while lower values represent areas seen by fewer cannon positions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Range Map -->
+      <div class="row project-section align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <img src="images/pr/Visibility2.png" class="map-image img-fluid" alt="Visibility range map of El Morro">
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="project-card">
+            <h2 class="section-title">Visibility Range</h2>
+            <p class="map-description">
+              This supporting map uses buffer distances to show how far visibility extends from the fort. While simpler than the viewshed, it helps orient the viewer and provides a clearer sense of scale for interpreting the broader visibility patterns across the coastline and open water.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data and Methods -->
+      <div class="row project-section">
+        <div class="col-lg-12">
+          <div class="project-card">
+            <h2 class="section-title">Data & Methods</h2>
+
+            <div class="subheading">Data</div>
+            <p class="map-description">
+              The primary elevation surface for this project was a NOAA digital elevation model. This DEM provided the terrain needed to model sightlines from El Morro toward the surrounding coastline and ocean approaches. Because the DEM did not extend far enough over the water for a coastal defense analysis, an additional ocean surface was created and joined to the original raster.
+            </p>
+
+            <div class="subheading">Observer Placement</div>
+            <p class="map-description">
+              Observer points were manually placed rather than generated automatically. Their locations were based on field observations and on visible depressions along the fort walls in the DEM that aligned with cannon positions seen during the site visit. This approach aimed to reflect historically meaningful artillery locations instead of generalized point spacing.
+            </p>
+
+            <div class="subheading">Surface Preparation</div>
+            <p class="map-description">
+              To extend the analysis into open water, a polygon representing the ocean was converted to raster using a constant elevation value derived from the outer edge of the DEM. This raster was then mosaicked to the original DEM to create a continuous coastal surface. Water values were also smoothed in order to reduce artificial gaps and holes in the viewshed output that were not meaningful in the context of open ocean visibility.
+            </p>
+
+            <div class="subheading">Analysis</div>
+            <p class="map-description">
+              A geodesic viewshed analysis was then run using the modified DEM and the manually placed observer points. A small observer offset was applied so that the modeled line of sight better reflected cannon placement behind the parapet walls rather than ground-level visibility alone. In addition to the viewshed, distance buffers were created as a second layout to help communicate the outward scale of visibility and make the extent of the analysis easier to interpret.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fun History -->
+      <div class="row project-section">
+        <div class="col-lg-12">
+          <div class="project-card">
+            <h2 class="section-title">El Morro: Facts & History</h2>
+
+            <ul class="fact-list">
+              <li>
+                El Morro was built to control the entrance to San Juan Bay, making visibility over water one of its most important defensive advantages
+                (<a href="https://www.nps.gov/saju/learn/historyculture/el-morro.htm" target="_blank">National Park Service</a>).
+              </li>
+
+              <li>
+                The fort sits above steep coastal cliffs, with walls rising roughly 60 feet above the ocean, providing both protection and a strong observation point
+                (<a href="https://www.nps.gov/saju/planyourvisit/el-morro.htm" target="_blank">National Park Service</a>).
+              </li>
+
+              <li>
+                The small sentry boxes known as <em>garitas</em> allowed guards to monitor the coastline while remaining protected from weather and attack, and have become an iconic symbol of Puerto Rico
+                (<a href="https://www.nps.gov/saju/learn/historyculture/garitas.htm" target="_blank">National Park Service</a>).
+              </li>
+
+              <li>
+                Cannons were mounted in openings along the parapet walls called embrasures, which protected artillery crews while allowing outward fire
+                (<a href="https://www.nps.gov/saju/learn/historyculture/fortifications.htm" target="_blank">National Park Service</a>).
+              </li>
+
+              <li>
+                El Morro is not a single structure but a multi-level defensive system of walls, ramps, batteries, and lookout points designed for layered defense
+                (<a href="https://www.nps.gov/saju/learn/historyculture/index.htm" target="_blank">National Park Service</a>).
+              </li>
+
+              <li>
+                Construction of El Morro began in 1539, and the fort withstood multiple attacks, including English assaults in 1595 and 1598 and a Dutch attack in 1625
+                (<a href="https://whc.unesco.org/en/list/266/" target="_blank">UNESCO World Heritage Site</a>).
+              </li>
+
+            </ul>
+
+            <div class="subheading">Sources</div>
+            <p class="map-description">
+              National Park Service, San Juan National Historic Site; UNESCO World Heritage Centre – La Fortaleza and San Juan National Historic Site.
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <a href="mapgallery.html" class="button">Back</a>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Olivia Whiting 2026</p>
+      </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

@@ -5,8 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Okoboji Treasures map project">
+    <meta name="author" content="Olivia Whiting">
 
     <title>Okoboji Treasures</title>
 
@@ -17,6 +17,55 @@
     <!-- Custom styles for this template -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
     <style>
+      body {
+        font-family: 'Roboto Slab', serif;
+      }
+
+      .hero-title {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .hero-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        color: #555;
+      }
+
+      .project-section {
+        margin-bottom: 50px;
+      }
+
+      .project-card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        height: 100%;
+      }
+
+      .map-image {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .map-description {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #333;
+      }
+
       .button {
         background-color: #4287f5;
         border: none;
@@ -28,18 +77,27 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+        border-radius: 8px;
       }
+
+      .button:hover {
+        background-color: #2f6fd1;
+        color: white;
+        text-decoration: none;
+      }
+
       .button-container {
         text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 20px;
+        margin-bottom: 30px;
       }
-      .map-description {
-        font-size: 24px;
-        line-height: 1.6;
+
+      @media (max-width: 991px) {
+        .hero-title {
+          font-size: 2rem;
+        }
       }
     </style>
-
 
   </head>
 
@@ -76,37 +134,33 @@
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Page Heading -->
-      <h1 style= "margin-top: 40px;" >  </h1>
+      <h1 class="hero-title">Okoboji Treasures</h1>
+      <p class="hero-subtitle">
+        A geospatial exploration of reported shipwrecks, submerged boats, and historic treasure locations in Lake Okoboji
+      </p>
 
+      <div class="row project-section align-items-center">
+        <div class="col-lg-6">
+          <img src="images/bojitreasuresmap.png" class="map-image img-fluid" alt="Okoboji Treasures map">
+        </div>
 
-
-      <div class="row">
-
-        <!-- Image column -->
-      <div class="col-lg-6">
-        <img src="images/bojitreasuresmap.png" class="img-fluid" alt="">
+        <div class="col-lg-6">
+          <div class="project-card">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="map-description">
+              A geospatial map of reported shipwrecks, submerged boats, and other historic
+              treasure locations in Lake Okoboji, created by linking archival accounts
+              and local history with mapped coordinates.
+            </p>
+            <p class="map-description">
+              An ArcGIS Online Web Map of this data and its sources can be found
+              <a href="https://arcg.is/1ji89S2" target="_blank">here</a>. Embedded map coming soon.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- Text column -->
-      <div class="col-lg-6">
-        <p class="map-description">
-          A geospatial map of reported shipwrecks, submerged boats, and other historic
-          treasure locations in Lake Okoboji, created by linking archival accounts
-          and local history with mapped coordinates.
-        </p>
-        <p class="map-description">
-          An ArcGIS Online Web Map of this data and its sources can be found <a href="https://arcg.is/1ji89S2" target="_blank">here</a>. Embedded map coming soon.
-        </p>
-      </div>
-
-    </div>
-
-
-
-
-
-      <div class="button-container" style= "margin-top: 40px;" >
+      <div class="button-container">
         <a href="mapgallery.html" class="button">Back</a>
       </div>
     </div>
