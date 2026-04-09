@@ -163,7 +163,7 @@
           <div class="project-card">
             <h2 class="section-title">Viewshed Analysis</h2>
             <p class="map-description">
-              This map shows cumulative visibility from manually placed observer points representing cannon positions along the walls of El Morro. These points were digitized based on visible terrain depressions in the DEM and field observations made on site, where cannon locations could be directly compared to the surface pattern of the fort.
+              This map shows cumulative visibility from cannon positions along the walls of El Morro. These points were digitized based on visible terrain depressions in the DEM and field observations made on site, where cannon locations could be directly compared to the surface pattern of the fort.
             </p>
             <p class="map-description">
               The viewshed output represents the number of observer points that can see each location. Higher values indicate stronger overlap in visibility, while lower values represent areas seen by fewer cannon positions.
@@ -181,7 +181,7 @@
           <div class="project-card">
             <h2 class="section-title">Visibility Range</h2>
             <p class="map-description">
-              This supporting map uses buffer distances to show how far visibility extends from the fort. While simpler than the viewshed, it helps orient the viewer and provides a clearer sense of scale for interpreting the broader visibility patterns across the coastline and open water.
+              This supporting map uses buffer distances to show how far visibility extends from the fort. While simpler than the viewshed, it helps orient and gives a better sense of scale for interpreting the broader visibility patterns across the coastline and open water.
             </p>
           </div>
         </div>
@@ -195,26 +195,40 @@
 
             <div class="subheading">Data</div>
             <p class="map-description">
-              The primary elevation surface for this project was a NOAA digital elevation model. This DEM provided the terrain needed to model sightlines from El Morro toward the surrounding coastline and ocean approaches. Because the DEM did not extend far enough over the water for a coastal defense analysis, an additional ocean surface was created and joined to the original raster.
+              The primary data used for spatial analysis is a DEM from the National Oceanic and Atmospheric Administration,
+              found <a href="https://www.fisheries.noaa.gov/inport/item/60105" target="_blank">here.</a>
             </p>
 
             <div class="subheading">Observer Placement</div>
             <p class="map-description">
-              Observer points were manually placed rather than generated automatically. Their locations were based on field observations and on visible depressions along the fort walls in the DEM that aligned with cannon positions seen during the site visit. This approach aimed to reflect historically meaningful artillery locations instead of generalized point spacing.
+              Observer points were manually placed rather than generated automatically. Their locations were based on field observations
+              and on visible depressions along the fort walls in the DEM that aligned with cannon positions seen during the site visit.
+              This was to reflect actual, meaningful artillery locations instead of generalized point spacing.
             </p>
 
             <div class="subheading">Surface Preparation</div>
             <p class="map-description">
-              To extend the analysis into open water, a polygon representing the ocean was converted to raster using a constant elevation value derived from the outer edge of the DEM. This raster was then mosaicked to the original DEM to create a continuous coastal surface. Water values were also smoothed in order to reduce artificial gaps and holes in the viewshed output that were not meaningful in the context of open ocean visibility.
+              The raw DEM from the NOAA does not extend very far beyond shorelines, but this analysis is of ocean visibility.
+              To extend the analysis into open water, a polygon was created to fill a 1600 meter buffer around the fort. 1600 meters is the max range of the
+              average cannon at El Morro, according to the <a href="https://www.nps.gov/saju/faqs.htm" target="_blank">National Park Service.</a>
+              This polygon was assigned a constant elevation value taken from the outer edge of the DEM that is over water. The extension polygon was
+              converted to raster and mosaicked to the DEM to create a continuous surface extending into San Juan Bay. The mosaic seams and other elevation
+              values over water were smoothed in order to reduce artificial gaps and holes in the viewshed output that were not
+              meaningful in the context of open ocean visibility.
             </p>
 
-            <div class="subheading">Analysis</div>
+            <div class="subheading">Analysis Methodology</div>
             <p class="map-description">
-              A geodesic viewshed analysis was then run using the modified DEM and the manually placed observer points. A small observer offset was applied so that the modeled line of sight better reflected cannon placement behind the parapet walls rather than ground-level visibility alone. In addition to the viewshed, distance buffers were created as a second layout to help communicate the outward scale of visibility and make the extent of the analysis easier to interpret.
+              A geodesic viewshed analysis was then run using the modified DEM and the manually placed observer points. A small observer offset was applied
+               so that the modeled line of sight better reflected cannon placement behind the parapet walls rather than ground-level visibility alone.
+               In addition to the viewshed, distance buffers were created as a second layout to help visualize the outward scale of visibility and make
+               the extent of the analysis easier to interpret.
             </p>
           </div>
         </div>
       </div>
+
+
 
       <!-- Fun History -->
       <div class="row project-section">
@@ -224,34 +238,52 @@
 
             <ul class="fact-list">
               <li>
-                El Morro was built to control the entrance to San Juan Bay, making visibility over water one of its most important defensive advantages
-                (<a href="https://www.nps.gov/saju/learn/historyculture/el-morro.htm" target="_blank">National Park Service</a>).
+                El Morro was built to control the entrance to San Juan Bay, making visibility over water one of its most important defensive advantages.
+
               </li>
 
               <li>
-                The fort sits above steep coastal cliffs, with walls rising roughly 60 feet above the ocean, providing both protection and a strong observation point
-                (<a href="https://www.nps.gov/saju/planyourvisit/el-morro.htm" target="_blank">National Park Service</a>).
+                The only time El Morro fell to enemy forces-British fleets in 1598- it was because they were able to overwhelm the seaside defense and
+                march on the fort from land where it was much more vulnerable. But only after 65 days of pillaging, the British forces were so deathly
+                plagued by dysentery that they had to give up their position and flee by ship. Some historians claim this failure to hold Puerto Rico
+                pushed England's focus away from the Carribean and towards North America.
+                ().
               </li>
 
               <li>
-                The small sentry boxes known as <em>garitas</em> allowed guards to monitor the coastline while remaining protected from weather and attack, and have become an iconic symbol of Puerto Rico
-                (<a href="https://www.nps.gov/saju/learn/historyculture/garitas.htm" target="_blank">National Park Service</a>).
+                Losing Puerto Rico even briefly caused Spain to really invest in El Morro, sending more troops and reforming government, trade, and tax policy.
+                This made Puerto Rico one of the most important
               </li>
 
               <li>
-                Cannons were mounted in openings along the parapet walls called embrasures, which protected artillery crews while allowing outward fire
-                (<a href="https://www.nps.gov/saju/learn/historyculture/fortifications.htm" target="_blank">National Park Service</a>).
+                  El Morro was fortified after each time it was attacked over the span of over 200 years. It now stands at 6 levels, with walls 140 feet above the
+                  sea and up to 25 feet thick.
               </li>
 
               <li>
-                El Morro is not a single structure but a multi-level defensive system of walls, ramps, batteries, and lookout points designed for layered defense
-                (<a href="https://www.nps.gov/saju/learn/historyculture/index.htm" target="_blank">National Park Service</a>).
+                  The last major renovations were done by an Irish engineer, Thomas O'Daly. These renovations were completed just in time for another British invasion in 1797.
               </li>
 
               <li>
-                Construction of El Morro began in 1539, and the fort withstood multiple attacks, including English assaults in 1595 and 1598 and a Dutch attack in 1625
-                (<a href="https://whc.unesco.org/en/list/266/" target="_blank">UNESCO World Heritage Site</a>).
+                  A century later in 1898, Puerto Rico became an easy target during the Spanish-American War. The defenses built to protect against wooden ships were
+                  now no match for the technologies of the Industrial Revolution that America had. This ended the era of Spanish presence in the Americas, and established
+                  the United States as a world power.
               </li>
+
+              <li>
+                  During both World Wars, the United States used El Morro as a military base, installing bunkers, naval observation posts, and anti-aircraft artillery.
+                  After hundreds of years defending against wooden sailing ships, El Morro could now defend against air and submarine attacks. It now stands as a fusion of
+                  Medieval architecture and modern engineering. 
+              </li>
+
+              <li>More facts:
+                <ul>
+                  <li><a href="https://www.nps.gov/saju/learn/historyculture/el-morro.htm" target="_blank">National Park Service- El Morro page</a></li>
+                  <li><a href="https://www.nps.gov/saju/learn/historyculture/fortifications.htm" target="_blank">National Park Service- Fortifications page</a></li>
+                  <li><a href="https://www.nps.gov/saju/faqs.htm" target="_blank">National Park Service- San Juan FAQ</a></li>
+                  <li><a href="https://puertoricoreport.com/the-oldest-fort-in-the-u-s/" target="_blank">Puerto Rico Report/a></li>
+
+                </ul>
 
             </ul>
 
